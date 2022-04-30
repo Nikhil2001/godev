@@ -1,0 +1,15 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	v, _ := time.Parse(time.Layout, "01:03PM")
+	fmt.Println(v)
+
+	t := time.Now()
+	loc, _ := time.LoadLocation("Europe/London")
+	fmt.Println(t.In(loc))
+}

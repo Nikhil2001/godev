@@ -3,26 +3,34 @@ package main
 import "fmt"
 
 const (
-	a = 1
+	a = iota
 	b
-	c = iota
-	_
+	c
 	d
 )
 
 const (
-	e = 2
+	e = 0
+	_
 	f
-	g = f << iota
+	g = iota
 	h
+)
+
+const (
+	i = iota
+	_
+	j
+	_
+	k
+	_
+	_
+	l
 )
 
 func main() {
 	fmt.Println(a, b, c, d)
 	fmt.Println(e, f, g, h)
-
-	const s1 = 123
-	var f1 float64 = s1 * 2
-	fmt.Println(f1)
+	fmt.Println(i, j, k, l)
 
 }
