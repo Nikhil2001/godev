@@ -3,27 +3,25 @@ package main
 import "fmt"
 
 type S1 struct {
-	F1 string
-	F2 int
+	F1 int
+	F2 string
 }
 
 type S2 struct {
-	F1 int
-	F2 float64
+	F1 float64
+	F2 S1
 }
 
-func Print(i interface{}) {
-	fmt.Println(i)
+func Print(s any) {
+	fmt.Println(s)
 }
 
 func main() {
-	var s1 = S1{F1: "field1", F2: 1}
-	var s2 = S2{F1: 1, F2: 2.0}
-	fmt.Println(s1)
-	fmt.Println(s2)
+
+	s1 := S1{10, "go"}
+	s2 := S2{F1: 2, F2: s1}
 	Print(s1)
 	Print(s2)
-	//defer func() { fmt.Println(recover()) }()
-	_, _ = interface{}(s1).(int)
-
+	Print(123)
+	Print(2 + 3i)
 }
